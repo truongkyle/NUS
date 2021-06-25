@@ -1,0 +1,125 @@
+{% extends 'Common/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <p class="card-category">Candidate</p>
+                <h3 class="card-title">100</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="fas fa-info-circle mt-1 text-info"></i>
+                    <a href="">&nbsp;Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <p class="card-category">Community</p>
+                <h3 class="card-title">8</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="fas fa-info-circle mt-1 text-info"></i>
+                    <a href="">&nbsp;Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <p class="card-category">Candidate</p>
+                <h3 class="card-title">12</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="fas fa-exclamation-triangle mt-1 text-warning"></i>
+                    &nbsp; Candidates changed direction.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="far fa-user"></i>
+                </div>
+                <p class="card-category">User</p>
+                <h3 class="card-title">120</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="fas fa-info-circle mt-1 text-info"></i>
+                    <a href="">&nbsp;Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card card-chart">
+            <img class="profile-user-img img-fluid rounded-circle img-thumbnail"
+                 src="{% static 'images/default_image.png' %}" alt="GH Image" style="margin-top: -70px;margin-left:85px;">
+            <div class="card-body">
+                <h4 class="card-title text-center">Nguyễn Ngọc Khang</h4>
+                <h6 class="card-title text-center">(Giám Học)</h6>
+                <p class="card-category text-center">
+                    <span class="align-middle"><i
+                            class="fas fa-mobile-alt text-dark"></i>&nbsp; 0987625343</span><br/>
+                    <span class="align-middle"><i
+                            class="fas fa-envelope-open-text text-dark"></i></i>&nbsp; fatherkhang@gmail.com</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-chart">
+            <img class="profile-user-img img-fluid rounded-circle img-thumbnail"
+                 src="{% static 'images/default_image.png' %}" alt="GD Image" style="margin-top: -70px;margin-left:85px;">
+            <div class="card-body">
+                <h4 class="card-title text-center">Nguyễn Quốc Kính</h4>
+                <h6 class="card-title text-center">(Giám Đốc)</h6>
+                <p class="card-category text-center">
+                    <span class="align-middle"><i
+                            class="fas fa-mobile-alt text-dark"></i>&nbsp; 0987625343</span><br/>
+                    <span class="align-middle"><i
+                            class="fas fa-envelope-open-text text-dark"></i>&nbsp; fatherkinh@gmail.com</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-chart">
+            <img class="profile-user-img img-fluid rounded-circle img-thumbnail"
+                 src="{% static 'images/default_image.png' %}" alt="Ql Image" style="margin-top: -70px;margin-left:85px;">
+            <div class="card-body">
+                <h4 class="card-title text-center">Nguyễn Ngọc Triêm</h4>
+                <h6 class="card-title text-center">(Quản Lý)</h6>
+                <p class="card-category text-center">
+                    <span class="align-middle"><i
+                            class="fas fa-mobile-alt text-dark"></i>&nbsp; 0978652432</span><br/>
+                    <span class="align-middle"><i
+                            class="fas fa-envelope-open-text text-dark"></i>&nbsp; fathertriem@gmail.com</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

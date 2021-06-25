@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign In - SJC System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div class="body-login" style="height:635px;">
+    <div class="container">
+        <img src="{% static 'images/logo.png' %}" class="image-fluid" alt="logo">
+        <div class="card-login bg-white">
+            <div class="card-title-login text-center font-weight-bold">Sign In</div>
+            <div class="card-login-body" id="loginForm">
+                <form action="" method="post" autocomplete="off" class="login100-form">
+                    <div class="wrap-input100 validate-input mt-2 ml-3">
+                        <input type="text" name="username" id="username" class="form-control input100"
+                               placeholder="Email/Username" autofocus required>
+                        <span class="symbol-input100"><i class="fas fa-user fa-lg"></i></span>
+                    </div>
+                    <div class="wrap-input100 validate-input mt-4 ml-3">
+                        <input type="password" name="password" id="password" class="form-control input100"
+                               placeholder="Password" required>
+                        <span class="symbol-input100"><i class="fa fa-lock fa-lg"></i></span>
+                    </div>
+                    <button class="btn btn-login btn-block btn-outline-dark align-middle rounded mt-4 ml-3 mr-3 btn-hover-blue"
+                            type="submit" id="btn_login">Login
+                    </button>
+                </form>
+                <div class="row mt-4">
+                    <div class="col-md-7">
+                        &nbsp;&nbsp;
+                    </div>
+                    <div class="col-md-5 text-danger">
+                        <a href="#"><u class="text-danger">Forgot password?</u></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/jquery/jquery.min.js' %}"></script>
+</body>
+</html>
