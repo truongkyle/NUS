@@ -9,6 +9,4 @@ urlpatterns = [
     path('dashboard/', views.DashboardClass.as_view(), name='dashboard'),
     # User
     path('change-password/', views.ChangePasswordClass.as_view(), name='change_password'),
-
-
 ]
