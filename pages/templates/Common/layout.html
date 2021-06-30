@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 <aside id="left-panel" class="left-panel">
@@ -59,20 +60,20 @@
                     <a href="{% url 'pages:dashboard' %}"><i class="menu-icon fas fa-tachometer-alt fa-lg"></i>Dashboard </a>
                 </li>
                 <li  style="text-decoration: none; color: inherit;">
-                    <a><i class="menu-icon fas fa-user-tie fa-lg"></i>Manager</a>
+                    <a href="{% url 'pages:manager_list' %}"><i class="menu-icon fas fa-user-tie fa-lg"></i>Manager</a>
                 </li>
                 <li style="text-decoration: none; color: inherit;">
-                    <a><i class="menu-icon fas fa-users fa-lg"></i>Candidate </a>
+                    <a href="{% url 'pages:candidate_list' %}"><i class="menu-icon fas fa-users fa-lg"></i>Candidate </a>
                 </li>
                 <li style="text-decoration: none; color: inherit;">
-                    <a><i class="menu-icon fas fa-church fa-lg"></i>Community </a>
+                    <a href="{% url 'pages:community_list' %}"><i class="menu-icon fas fa-church fa-lg"></i>Community </a>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fas fa-user-friends fa-lg"></i>Companion</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fas fa-user-check fa-lg"></i><a href="#">Companion</a></li>
-                        <li><i class="menu-icon fas fa-house-damage fa-lg"></i><a href="#">Community Group</a></li>
+                        <li><i class="menu-icon fas fa-user-check fa-lg"></i><a href="{% url 'pages:companion_list' %}">Companion</a></li>
+                        <li><i class="menu-icon fas fa-house-damage fa-lg"></i><a href="{% url 'pages:community_group_list' %}">Community Group</a></li>
                         <li><i class="menu-icon far fa-calendar fa-lg"></i><a href="#">Companion Schedule</a></li>
                         <li><i class="menu-icon fas fa-file-signature fa-lg"></i><a href="#">Companion Report</a></li>
                     </ul>
@@ -81,8 +82,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fas fa-user-nurse fa-lg"></i>Spiritual Guide</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fas fa-user-check fa-lg"></i><a href="#">Spiritual Guide</a></li>
-                        <li><i class="menu-icon fas fa-house-damage fa-lg"></i><a href="#">Community Group</a></li>
+                        <li><i class="menu-icon fas fa-user-check fa-lg"></i><a href="{% url 'pages:spiritual_guide_list' %}">Spiritual Guide</a></li>
                         <li><i class="menu-icon far fa-calendar fa-lg"></i><a href="#">Spiritual Schedule</a></li>
                     </ul>
                 </li>
@@ -90,29 +90,19 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fas fa-graduation-cap fa-lg"></i>Education</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fas fa-chalkboard-teacher fa-lg"></i><a href="#">Teacher</a></li>
-                        <li><i class="menu-icon far fa-calendar-alt fa-lg"></i><a href="#">Timetable</a></li>
+                        <li><i class="menu-icon fas fa-chalkboard-teacher fa-lg"></i><a href="{% url 'pages:teacher_list' %}">Teacher</a></li>
+                        <li><i class="menu-icon far fa-calendar-alt fa-lg"></i><a href="{% url 'pages:timetable' %}">Timetable</a></li>
                     </ul>
                 </li>
                 <li style="text-decoration: none; color: inherit;">
-                    <a><i class="menu-icon fas fa-boxes fa-lg"></i>Department </a>
-                </li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fas fa-chart-line fa-lg"></i>Report</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon far fa-handshake fa-lg"></i><a href="#">Companion Meeting</a></li>
-                        <li><i class="menu-icon fas fa-handshake fa-lg"></i><a href="#">Spiritual Meeting</a></li>
-                        <li><i class="menu-icon fas fa-file-signature fa-lg"></i><a href="#">Companion Report</a></li>
-                        <li><i class="menu-icon far fa-chart-bar fa-lg"></i><a href="#">Candidate Track</a></li>
-                    </ul>
+                    <a href="{% url 'pages:department_list' %}"><i class="menu-icon fas fa-boxes fa-lg"></i>Department </a>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fab fa-windows fa-lg"></i>System</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon far fa-user fa-lg"></i><a href="#">Account</a></li>
-                        <li><i class="menu-icon fas fa-user-tag fa-lg"></i><a href="#">Role</a></li>
+                        <li><i class="menu-icon far fa-user fa-lg"></i><a href="">Account</a></li>
+                        <li><i class="menu-icon fas fa-user-tag fa-lg"></i><a href="">Role</a></li>
                     </ul>
                 </li>
             </ul>
@@ -134,10 +124,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
                         <img class="user-avatar rounded-circle"
-                             src="{% static 'images/default_image.png' %}" alt="User Avatar">
+                             src="{% static 'images/default_image.png' %}" alt="User Avatar" id="image_menu">
                     </a>
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" style="text-decoration: none; color: inherit;" href="#"><i
+                        <a class="nav-link" style="text-decoration: none; color: inherit;" href="{% url 'pages:user_info' %}"><i
                                 class="fas fa-info mr-4"></i> Personal</a>
                         <a class="nav-link" style="color: inherit;" href="{% url 'pages:change_password' %}"><i
                                 class="fas fa-key mr-3"></i> Change Password</a>

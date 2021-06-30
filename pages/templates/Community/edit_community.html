@@ -1,0 +1,74 @@
+{% extends 'Common/layout.html' %}
+
+{% block content %}
+<div class="card shadow mb-4" style="margin-top: -5px;">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">Edit Community</h6>
+    </div>
+    <div class="card-body">
+        <form action="" method="post" autocomplete="off">
+            <div class="row mt-2">
+                <div class="col-lg-4">
+                    <label class="font-weight-bold" style="font-size:15px;">Community Information:</label>
+                    <p style="font-size: 12px;">Information supports to manage many communities. </p>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="community_name">Community Name</label>
+                    <label class="text-danger">*</label>
+                    <input type="text" id="community_name" name="community_name" class="form-control text-size-13px "
+                           placeholder="Enter Community Name..."
+                           style=" margin-top: -5px;">
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="patron">Patron</label>
+                    <label class="text-danger">*</label>
+                    <input name="patron" id="patron" type="date" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="address">Address</label>
+                    <label class="text-danger">*</label>
+                    <input type="text" id="address" name="address" class="form-control text-size-13px "
+                           placeholder="Enter Address..."
+                           style=" margin-top: -5px;">
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="amount">Amount</label>
+                    <label class="text-danger">*</label>
+                    <input type="number" name="amount" id="amount" class="form-control  text-size-13px"
+                           placeholder="Enter Amount..."
+                           style="margin-top: -5px;">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-12">
+                    <div style="float:right">
+                        <button type="submit" class="btn rounded btn-hover-blue" id="btn_save"
+                                style="background-color: #056299;color: white;font-size:13px;">
+                            <i class="far fa-save fa-lg"></i>
+                            &nbsp;Save
+                        </button>
+                    </div>
+                    <div style="float:right; margin-right: 10px;">
+                        <a class="btn btn-success text-white rounded" style="font-size:13px;" name="btn_refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            &nbsp;Refresh
+                        </a>
+                    </div>
+                    <div style="float:right; margin-right: 340px;">
+                        <a class="btn text-white rounded btn-hover-blue"
+                           style="background-color: #056299;color: white;font-size:13px;"
+                           href="{% url 'pages:community_list' %}">
+                            <i class="fas fa-fast-backward"></i>
+                            &nbsp;Back To List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'Common/layout.html' %}
+
+{% block content %}
+<div class="card shadow mb-4" style="margin-top: -5px;">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">Edit Timetable</h6>
+    </div>
+    <div class="card-body">
+        <form action="" method="post" autocomplete="off">
+            <div class="row mt-2">
+                <div class="col-lg-4">
+                    <label class="font-weight-bold" style="font-size:15px;">Timetable Information:</label>
+                    <p style="font-size: 12px;">Information supports to manage many timetables. </p>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="subject">Subject</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="subject"
+                            id="subject" style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Subject ---</option>
+                        <option>avac</option>
+                    </select>
+                </div>
+                 <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="teacher">Teacher</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="teacher"
+                            id="teacher" style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Teacher ---</option>
+                        <option>avac</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="start_date">Start Date</label>
+                    <label class="text-danger">*</label>
+                    <input name="start_date" id="start_date" type="date" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="end_date">End Date</label>
+                    <label class="text-danger">*</label>
+                    <input name="end_date" id="end_date" type="date" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="day_of_week">Day of Week</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="day_of_week" id="day_of_week"
+                            style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Day of Week ---</option>
+                        <option>Sunday</option>
+                        <option>Monday</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-12">
+                    <div style="float:right">
+                        <button type="submit" class="btn rounded btn-hover-blue" id="btn_save"
+                                style="background-color: #056299;color: white;font-size:13px;">
+                            <i class="far fa-save fa-lg"></i>
+                            &nbsp;Save
+                        </button>
+                    </div>
+                    <div style="float:right; margin-right: 10px;">
+                        <a class="btn btn-success text-white rounded" style="font-size:13px;" name="btn_refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            &nbsp;Refresh
+                        </a>
+                    </div>
+                    <div style="float:right; margin-right: 340px;">
+                        <a class="btn text-white rounded btn-hover-blue"
+                           style="background-color: #056299;color: white;font-size:13px;"
+                           href="{% url 'pages:timetable' %}">
+                            <i class="fas fa-fast-backward"></i>
+                            &nbsp;Back To List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
