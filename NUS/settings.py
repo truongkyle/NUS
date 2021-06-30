@@ -31,9 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'login.apps.LoginConfig',
     'candidate.apps.CandidateConfig',
     'pages.apps.PagesConfig',
-    'partner.apps.PartnerConfig',
+    'companion.apps.CompanionConfig',
     'teacher.apps.TeacherConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -103,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTH_USER_MODEL = 'login.Account'
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
