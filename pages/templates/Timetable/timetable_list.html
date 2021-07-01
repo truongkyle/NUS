@@ -1,0 +1,114 @@
+{% extends 'Common/layout.html' %}
+
+{% block content %}
+<div class="card shadow mb-4" style="margin-top: -5px;">
+    <div class="card-header py-3" style="margin-bottom:-40px">
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <h6 class="m-0 font-weight-bold text-dark">TIMETABLE</h6>
+            </div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="row mr-1">
+            <div class="col-md-2">
+                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                    <i class="fas fa-file-export fa-sm"></i>
+                    &nbsp;Export
+                </a>
+            </div>
+            <div class="col-md-7"></div>
+            <div class="col-md-2" style="padding-left:85px;">
+                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                    <i class="fas fa-file-import fa-sm"></i>
+                    &nbsp;Import
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn rounded btn-hover-blue" href="{% url 'pages:add_timetable' %}"
+                   style="background-color: #056299;color: white;font-size:14px;">
+                    <i class="fas fa-plus fa-sm"></i>
+                    &nbsp;Add
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <hr style="height:1px;color:lightgray;background-color:lightgray">
+        <div class="table-responsive" style="margin-top:-8px">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Ordinal</th>
+                    <th>Subject</th>
+                    <th>Teacher</th>
+                    <th>Day of Week</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>Ordinal</th>
+                    <th>Subject</th>
+                    <th>Teacher</th>
+                    <th>Day of Week</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Action</th>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>English Beginner Listening</td>
+                    <td>Mr. Mile</td>
+                    <td>Thursday</td>
+                    <td>asdfsdf</td>
+                    <td>asdgfsdg</td>
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteTimetableModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="deleteTimetableModal" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Delete Timetable</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size: large;">Are you sure to delete this timetable?</span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn rounded text-white btn-hover-blue" style="background-color: #056299;">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

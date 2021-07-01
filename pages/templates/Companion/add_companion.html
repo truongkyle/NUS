@@ -1,0 +1,123 @@
+{% extends 'Common/layout.html' %}
+
+{% block content %}
+<div class="card shadow mb-4" style="margin-top: -5px;">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">Add Companion</h6>
+    </div>
+    <div class="card-body">
+        <form action="" method="post" autocomplete="off">
+            <div class="row mt-2">
+                <div class="col-lg-4">
+                    <label class="font-weight-bold" style="font-size:15px;">Companion Information:</label>
+                    <p style="font-size: 12px;">Information supports to manage many companions. </p>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="full_name">Fullname</label>
+                    <label class="text-danger">*</label>
+                    <input type="text" id="full_name" name="full_name" class="form-control text-size-13px "
+                           placeholder="Enter Fullname..."
+                           style=" margin-top: -5px;">
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="christian_name">Christian Name</label>
+                    <label class="text-danger">*</label>
+                    <input type="text" name="christian_name" id="christian_name" class="form-control  text-size-13px "
+                           placeholder="Enter Christian Name..."
+                           style="margin-top: -5px;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="birthday">Birthday</label>
+                    <label class="text-danger">*</label>
+                    <input name="birthday" id="birthday" type="date" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="position">Position</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="position"
+                            id="position" style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Position ---</option>
+                        <option>Employee</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="phone">Phone</label>
+                    <label class="text-danger">*</label>
+                    <input name="phone" id="phone" type="text" class="form-control  text-size-13px "
+                           placeholder="Enter Phone..." style="margin-top: -5px;">
+                    <span id="error_phone" class="text-danger text-size-13px"></span>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="email">Email</label>
+                    <label class="text-danger">*</label>
+                    <input name="email" id="email" type="text"
+                           class="form-control  text-size-13px " placeholder="Enter Email Address..."
+                           style="margin-top: -5px;">
+                    <span id="error_email" class="text-danger text-size-13px"></span>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="community">Community</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="community" id="community"
+                            style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Community ---</option>
+                        <option>acb</option>
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="status">Status</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="status" id="status"
+                            style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Status ---</option>
+                        <option>Active</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="image">Image</label>
+                    <input type="file" id="image" class="form-control rounded text-size-13px"
+                           style="margin-top: -5px;"/>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-12">
+                    <div style="float:right">
+                        <button type="submit" class="btn rounded btn-hover-blue" id="btn_save"
+                                style="background-color: #056299;color: white;font-size:13px;">
+                            <i class="far fa-save fa-lg"></i>
+                            &nbsp;Save
+                        </button>
+                    </div>
+                    <div style="float:right; margin-right: 10px;">
+                        <a class="btn btn-success text-white rounded" style="font-size:13px;" name="btn_refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            &nbsp;Refresh
+                        </a>
+                    </div>
+                    <div style="float:right; margin-right: 340px;">
+                        <a class="btn text-white rounded btn-hover-blue"
+                           style="background-color: #056299;color: white;font-size:13px;"
+                           href="{% url 'pages:companion_list' %}">
+                            <i class="fas fa-fast-backward"></i>
+                            &nbsp;Back To List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

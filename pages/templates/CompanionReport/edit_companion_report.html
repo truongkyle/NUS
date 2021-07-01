@@ -1,0 +1,92 @@
+{% extends 'Common/layout.html' %}
+
+{% block content %}
+<div class="card shadow mb-4" style="margin-top: -5px;">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">Edit Companion Report</h6>
+    </div>
+    <div class="card-body">
+        <form action="" method="post" autocomplete="off">
+            <div class="row mt-2">
+                <div class="col-lg-4">
+                    <label class="font-weight-bold" style="font-size:15px;">Companion Report Information:</label>
+                    <p style="font-size: 12px;">Information supports to manage many companion reports. </p>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="candidate">Candidate</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="candidate"
+                            id="candidate" style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Candidate ---</option>
+                        <option>Employee</option>
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="date">Date</label>
+                    <label class="text-danger">*</label>
+                    <input type="date" name="date" id="date" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="report_file">Report File</label>
+                    <input type="file" id="report_file" class="form-control rounded text-size-13px"
+                           style="margin-top: -5px;"/>
+                </div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="schedule_file">Schedule File</label>
+                    <input type="file" id="schedule_file" class="form-control rounded text-size-13px"
+                           style="margin-top: -5px;"/>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="receipts_and_payment_file">Reciepts and Payments File</label>
+                    <input type="file" id="receipts_and_payment_file" class="form-control rounded text-size-13px"
+                           style="margin-top: -5px;"/>
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    <label class="font-weight-bold col-form-label" for="note">Notes</label>
+                    <label class="text-danger">*</label>
+                    <input name="note" id="note" type="textarea" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-12">
+                    <div style="float:right">
+                        <button type="submit" class="btn rounded btn-hover-blue" id="btn_save"
+                                style="background-color: #056299;color: white;font-size:13px;">
+                            <i class="far fa-save fa-lg"></i>
+                            &nbsp;Save
+                        </button>
+                    </div>
+                    <div style="float:right; margin-right: 10px;">
+                        <a class="btn btn-success text-white rounded" style="font-size:13px;" name="btn_refresh">
+                            <i class="fas fa-sync-alt"></i>
+                            &nbsp;Refresh
+                        </a>
+                    </div>
+                    <div style="float:right; margin-right: 340px;">
+                        <a class="btn text-white rounded btn-hover-blue"
+                           style="background-color: #056299;color: white;font-size:13px;"
+                           href="{% url 'pages:companion_report_list' %}">
+                            <i class="fas fa-fast-backward"></i>
+                            &nbsp;Back To List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
