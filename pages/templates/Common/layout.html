@@ -49,9 +49,9 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}" alt="Logo"
-                                                  width="50px" height="50px"></a>
-            <a class="navbar-brand hidden" href="#"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
+            <a class="navbar-brand" href="{% url 'pages:dashboard' %}">
+                <img class="img-fluid w-25" src="{% static 'images/logo.png' %}" alt="Logo">
+            </a>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -112,14 +112,12 @@
 <div id="right-panel" class="right-panel">
     <header id="header" class="header">
         <div class="header-menu">
-            <div class="col-sm-7">
+            <div class="col-lg-9 col-md-8 col-sm-0">
                 <a id="menuToggle" class="float-left" style="margin-left: -25px; cursor: pointer;"><i
                         class="fas fa-bars fa-2x"></i></a>
-                <div class="header-left">
-
-                </div>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-7"></div>
+            <div class="col-lg-3 col-md-4 col-sm-5">
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
@@ -139,18 +137,18 @@
         </div>
     </header>
     <div class="breadcrumbs mt-2">
-        <div class="col-sm-4">
+        <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Dashboard</h1>
+                    <h1>SJC System</h1>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Dashboard</li>
+                        <li class="active">{{ title }}</li>
                     </ol>
                 </div>
             </div>
