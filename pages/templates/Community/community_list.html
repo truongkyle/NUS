@@ -57,29 +57,32 @@
                 </tr>
                 </tfoot>
                 <tbody>
-                <tr>
-                    <th class="align-middle" scope="row">1</th>
-                    <td>Andre Phu Yen</td>
-                    <td>26/07</td>
-                    <td>123 abc, adaf, adfs</td>
-                    <td>100</td>
-                    <td>
-                        <div class="row" style="margin-left:-13px;">
-                            <div class="col-lg-4">
-                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
-                                        style="margin-left: -14px;">
-                                    <i class="fas fa-edit fa-md ml--2px"></i>
-                                </button>
+                {% for each_community in community_list %}
+                    <tr>
+                        <th class="align-middle" scope="row">{{forloop.counter}}</th>
+                        <td>{{each_community.community.communityName}}</td>
+                        <td>{{each_community.community.patron.day}} / {{each_community.community.patron.month}}</td>
+                        <td>{{each_community.community.address}}</td>
+                        <td>{{each_community.amout_candidate}}</td>
+                        <td>
+                            <div class="row" style="margin-left:-13px;">
+                                <div class="col-lg-4">
+                                    <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                            style="margin-left: -14px;">
+                                        <i class="fas fa-edit fa-md ml--2px"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button data-toggle="modal" data-target="#deleteCandidateModal"
+                                            class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                        <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-lg-4">
-                                <button data-toggle="modal" data-target="#deleteCandidateModal"
-                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
-                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                {% endfor %}
+               
                 </tbody>
             </table>
         </div>

@@ -3,19 +3,21 @@ from django.db.models.fields import IntegerField
 from login.models import Account
 from django.contrib.staticfiles.templatetags.staticfiles import static
 import datetime
+from companion.models import Companion
 
 
 
 # Create your models here.
+
 class Community(models.Model):
     x = datetime.datetime.now()
     patron = models.DateTimeField(null= True, blank= True, default=x)
     christian = models.CharField(max_length=50, default='')
     communityName = models.CharField(max_length=50, default='')
     address = models.CharField(max_length=50)
+    companion = models.ForeignKey(Companion, null=True, on_delete=models.SET_NULL)
     def __str__(self):
         return self.communityName
-
 class Candidate(models.Model):
     x = datetime.datetime.now()
     b =datetime.date.today()

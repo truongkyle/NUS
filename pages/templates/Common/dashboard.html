@@ -10,7 +10,7 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <p class="card-category">Candidate</p>
-                <h3 class="card-title">100</h3>
+                <h3 class="card-title">{{candidates.count}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -27,7 +27,7 @@
                     <i class="fas fa-church"></i>
                 </div>
                 <p class="card-category">Community</p>
-                <h3 class="card-title">8</h3>
+                <h3 class="card-title">{{communities.count}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
+    {% comment %} <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
                 <div class="card-icon">
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
             <div class="card-header card-header-info card-header-icon">
@@ -61,7 +61,7 @@
                     <i class="far fa-user"></i>
                 </div>
                 <p class="card-category">User</p>
-                <h3 class="card-title">120</h3>
+                <h3 class="card-title">{{allUser.count}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -73,23 +73,27 @@
     </div>
 </div>
 <div class="row mt-4">
-    <div class="col-md-4">
-        <div class="card card-chart">
-            <img class="profile-user-img img-fluid rounded-circle img-thumbnail"
-                 src="{% static 'images/default_image.png' %}" alt="GH Image" style="margin-top: -70px;margin-left:85px;">
-            <div class="card-body">
-                <h4 class="card-title text-center">Nguyễn Ngọc Khang</h4>
-                <h6 class="card-title text-center">(Giám Học)</h6>
-                <p class="card-category text-center">
-                    <span class="align-middle"><i
-                            class="fas fa-mobile-alt text-dark"></i>&nbsp; 0987625343</span><br/>
-                    <span class="align-middle"><i
-                            class="fas fa-envelope-open-text text-dark"></i></i>&nbsp; fatherkhang@gmail.com</span>
-                </p>
+    {% for eachcompation in companions%}
+
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <img class="profile-user-img img-fluid rounded-circle img-thumbnail"
+                    src="{% static 'images/default_image.png' %}" alt="GH Image" style="margin-top: -70px;margin-left:85px;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">{{eachcompation.MSUser.fullName}}</h4>
+                    <h6 class="card-title text-center">{{forloop.counter}}</h6>
+                    <p class="card-category text-center">
+                        <span class="align-middle"><i
+                                class="fas fa-mobile-alt text-dark"></i>&nbsp; {{eachcompation.phone}}</span><br/>
+                        <span class="align-middle"><i
+                                class="fas fa-envelope-open-text text-dark"></i></i>&nbsp; {{eachcompation.MSUser.email}}</span>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
+    {% endfor %}
+    
+    {% comment %} <div class="col-md-4">
         <div class="card card-chart">
             <img class="profile-user-img img-fluid rounded-circle img-thumbnail"
                  src="{% static 'images/default_image.png' %}" alt="GD Image" style="margin-top: -70px;margin-left:85px;">
@@ -120,6 +124,6 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 </div>
 {% endblock %}

@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
-
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import get_user_model
+from login.models import Account
+from candidate.models import Community, Candidate
+from companion.models import Companion
+User = get_user_model()
 # Create your views here.
 
 
 def index(request):
+    a = User.objects.all()
+    b = Account.objects.all()
     return HttpResponse(' this is pages')
 
 
@@ -15,9 +22,27 @@ class LoginClass(View):
         return render(request, 'Common/login.html')
 
 
+
+
+
 class DashboardClass(View):
     def get(self, request):
-        return render(request, 'Common/dashboard.html', {'title': 'Dashboard'})
+        # companions = Account.objects.filter(option = 1)
+        # candidates = Account.objects.filter(option = 0)
+        companions = Companion.objects.all()
+        candidates = Candidate.objects.all()
+        allUser = Account.objects.all()
+        communities = Community.objects.all()
+        print('////////////////')
+        print(companions[0].MSUser.fullName)
+        context = {
+            'title': 'Dashboard',
+            'companions': companions,
+            'candidates': candidates,
+            'allUser': allUser,
+            'communities': communities
+        }
+        return render(request, 'Common/dashboard.html', context)
 
 
 # User
@@ -61,8 +86,29 @@ class EditManagerClass(View):
 # Candidate
 class CandidateListClass(View):
     def get(self, request):
+        # community = Community.objects.get(communityName = 'tu duc')
+        # candidate_list = Candidate.objects.filter(community = community)
+        candidate_list = Candidate.objects.all()
+        print('////////////////////////')
+        print(candidate_list)
+        print(request.user)
         title = 'Candidates'
-        context = {'title': title}
+        context = {
+            'title': title,
+            'candidate_list': candidate_list
+            }
+        return render(request, 'Candidate/candidate_list.html', context)
+class CompanionCandidateListClass(View):
+    def get(self, request):
+        community = Community.objects.get(communityName = 'tu duc')
+        candidate_list = Candidate.objects.filter(community = community)
+        print('////////////////////////')
+        print(candidate_list)
+        title = 'Candidates'
+        context = {
+            'title': title,
+            'candidate_list': candidate_list
+            }
         return render(request, 'Candidate/candidate_list.html', context)
 
 
@@ -83,8 +129,22 @@ class EditCandidateClass(View):
 # Community
 class CommunityListClass(View):
     def get(self, request):
+        all_community = Community.objects.all()
         title = 'Communities'
-        context = {'title': title}
+        community_list = []
+        for community in all_community:
+            candidateEachCom = Candidate.objects.filter( community = community)
+            print('//////////////////////////////?????????')
+            print(community.patron.month)
+            detail_Community = {
+                'community': community,
+                'amout_candidate': candidateEachCom.__len__()
+            }
+            community_list.append(detail_Community)
+        context = {
+            'community_list':community_list,
+            'title': title
+            }
         return render(request, 'Community/community_list.html', context)
 
 

@@ -1,12 +1,17 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
+from django.views.generic.base import TemplateView
 from . import views
+
 
 app_name = 'pages'
 urlpatterns = [
     path('', views.index, name='Pages'),
     # Common
-    path('login/', views.LoginClass.as_view(), name='login'),
+    path('login/', auth_views.LoginView.as_view(template_name = 'Common/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name = 'Common/logout.html'), name='logout'),
     path('dashboard/', views.DashboardClass.as_view(), name='dashboard'),
+    path('accounts/profile/', views.DashboardClass.as_view(), name='profile'),
     # User
     path('change-password/', views.ChangePasswordClass.as_view(), name='change_password'),
     path('user-info/', views.UserInfoClass.as_view(), name='user_info'),
@@ -16,6 +21,7 @@ urlpatterns = [
     path('edit-manager/', views.EditManagerClass.as_view(), name='edit_manager'),
     # Candidate
     path('candidate-list/', views.CandidateListClass.as_view(), name='candidate_list'),
+    path('candidate-candidate-list/', views.CompanionCandidateListClass.as_view(), name='companion_candidate_list'),
     path('add-candidate/', views.AddCandidateClass.as_view(), name='add_candidate'),
     path('edit-candidate/', views.EditCandidateClass.as_view(), name='edit_candidate'),
     # Community
