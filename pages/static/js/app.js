@@ -132,5 +132,38 @@ $(document).ready(function () {
         readURL(this);
     });
 
+    // Filter table
+    function filterText(){
+		var rex = new RegExp($('#filterText').val());
+		if(rex =="/all/"){
+		    clearFilter()
+		} else{
+			$('.abc').hide();
+			$('.abc').filter(function() {
+			return rex.test($(this).text());
+			}).show();
+		}
+	}
 
+    function clearFilter()
+	{
+		$('.filterText').val('');
+		$('.abc').show();
+	}
+
+	$("#choose_filter").click(function(){
+        if ($('#choose_filter').val('1')){
+            $("#position_filter").show();
+        } else {
+            if ($('#choose_filter').val('2')){
+                $("#homeland_filter").show();
+            } else {
+                $("#status_filter").show();
+            }
+        }
+
+    });
+    $(".btn2").click(function(){
+        $("p").show();
+    });
 });
