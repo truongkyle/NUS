@@ -34,8 +34,31 @@
     </div>
     <div class="card-body">
         <hr style="height:1px;color:lightgray;background-color:lightgray">
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+                <select class="custom-select filter-report" id="companion_filter">
+                    <option value="0">Companion</option>
+                    <option value="Nguyen Van An">Nguyen Van An</option>
+                    <option value="Le Trong Tan">Le Trong Tan</option>
+                    <option value="Ho Khanh Dien">Ho Khanh Dien</option>
+                </select>
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 mt-2">
+                <span class="font-weight-bold">From</span>
+            </div>
+            <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4">
+                <input type="date" class="custom-select filter-report" id="filter_date_from" />
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 mt-2">
+                <span class="font-weight-bold">To</span>
+            </div>
+            <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4">
+                <input type="date" class="custom-select filter-report" id="filter_date_to" />
+            </div>
+        </div>
+        <hr style="height:1px;color:lightgray;background-color:lightgray">
         <div class="table-responsive" style="margin-top:-8px">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered table-report" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
                     <th>Ordinal</th>
@@ -57,9 +80,93 @@
                 <tbody>
                 <tr>
                     <th>1</th>
-                    <td>Tran Van Kang</td>
+                    <td class="companion" data-companion="Nguyen Van An">Nguyen Van An</td>
                     <td>Nguyen Van Tin</td>
-                    <td>12/03/3031</td>
+                    <td>2021-06-23</td>
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#detailCompanionReportModal"
+                                        class="btn btn-primary btn-sm align-middle h-28px w-28px rounded" type="submit">
+                                    <i class="far fa-eye fa-md ml--3px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteCompanionReportModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td class="companion" data-companion="Nguyen Van An">Nguyen Van An</td>
+                    <td>Nguyen Van Tin Hoa</td>
+                    <td>2021-07-13</td>
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#detailCompanionReportModal"
+                                        class="btn btn-primary btn-sm align-middle h-28px w-28px rounded" type="submit">
+                                    <i class="far fa-eye fa-md ml--3px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteCompanionReportModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td class="companion" data-companion="Ho Khanh Dien">Ho Khanh Dien</td>
+                    <td>Nguyen Van Tinh</td>
+                    <td>2021-05-12</td>
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#detailCompanionReportModal"
+                                        class="btn btn-primary btn-sm align-middle h-28px w-28px rounded" type="submit">
+                                    <i class="far fa-eye fa-md ml--3px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteCompanionReportModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td class="companion" data-companion="Le Trong Tan">Le Trong Tan</td>
+                    <td>Nguyen Van Tin</td>
+                    <td>2021-05-01</td>
                     <td>
                         <div class="row" style="margin-left:-13px;">
                             <div class="col-lg-4">

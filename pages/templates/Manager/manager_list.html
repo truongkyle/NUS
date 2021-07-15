@@ -34,8 +34,34 @@
     </div>
     <div class="card-body">
         <hr style="height:1px;color:lightgray;background-color:lightgray">
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                <select class="custom-select" id="choose_filter">
+                    <option value="0" selected>Choose Filter</option>
+                    <option value="1">Position</option>
+                    <option value="2">Homeland</option>
+                </select>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                <select class="custom-select filter-manager" id="position_filter">
+                    <option value="0">Position</option>
+                    <option value="Director">Director</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Doctor">Doctor</option>
+                </select>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                <select class="custom-select filter-manager" id="homeland_filter">
+                    <option value="0">Homeland</option>
+                    <option value="Ho Chi Minh">Ho Chi Minh</option>
+                    <option value="Hai Phong">Hai Phong</option>
+                    <option value="Ninh Binh">Ninh Binh</option>
+                </select>
+            </div>
+        </div>
+        <hr style="height:1px;color:lightgray;background-color:lightgray">
         <div class="table-responsive" style="margin-top:-8px">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                 <thead>
                 <tr>
                     <th>Ordinal</th>
@@ -66,14 +92,77 @@
                     <td>Nguyen Van Hao</td>
                     <td>0978654123</td>
                     <td>begin@gmail.com</td>
-                    <td>Director</td>
-                    <td>Hai Phong</td>
+                    <td class="position" data-position="Director">Director</td>
+                    <td class="homeland" data-homeland="Hai Phong">Hai Phong</td>
                     <td>
                         <i class="fas fa-toggle-on fa-lg text-success"></i>
                     </td>
-                    <!--                    <td>-->
-                    <!--                        <i class="fas fa-toggle-off fa-lg text-danger"></i>-->
-                    <!--                    </td>-->
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#detailManagerModal"
+                                        class="btn btn-primary btn-sm align-middle h-28px w-28px rounded" type="submit">
+                                    <i class="far fa-eye fa-md ml--3px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteManagerModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Nguyen Van Hao</td>
+                    <td>0978654123</td>
+                    <td>begin@gmail.com</td>
+                    <td class="position" data-position="Manager">Manager</td>
+                    <td class="homeland" data-homeland="Ninh Binh">Ninh Binh</td>
+                    <td>
+                        <i class="fas fa-toggle-on fa-lg text-success"></i>
+                    </td>
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#detailManagerModal"
+                                        class="btn btn-primary btn-sm align-middle h-28px w-28px rounded" type="submit">
+                                    <i class="far fa-eye fa-md ml--3px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteManagerModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="abc">
+                    <th>3</th>
+                    <td>Nguyen Van Hao</td>
+                    <td>0978654123</td>
+                    <td>begin@gmail.com</td>
+                    <td class="position" data-position="Doctor">Doctor</td>
+                    <td class="homeland" data-homeland="Ho Chi Minh">Ho Chi Minh</td>
+                    <td>
+                        <i class="fas fa-toggle-on fa-lg text-success"></i>
+                    </td>
                     <td>
                         <div class="row" style="margin-left:-13px;">
                             <div class="col-lg-4">

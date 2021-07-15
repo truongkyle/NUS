@@ -36,13 +36,10 @@
                            style="margin-top: -5px;">
                 </div>
                 <div class="col-lg-4">
-                    <label class="font-weight-bold col-form-label" for="position">Position</label>
+                    <label class="font-weight-bold col-form-label" for="major">Major</label>
                     <label class="text-danger">*</label>
-                    <select class="custom-select  text-size-13px  h-32px" name="position"
-                            id="position" style="margin-top: -5px;">
-                        <option value="0" disabled selected>--- Position ---</option>
-                        <option>Regency</option>
-                    </select>
+                    <input name="major" id="major" type="text" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
                 </div>
             </div>
             <div class="row mt-1">
@@ -66,6 +63,12 @@
             <div class="row mt-1">
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="join_date">Started Date</label>
+                    <label class="text-danger">*</label>
+                    <input name="join_date" id="join_date" type="date" class="form-control  text-size-13px "
+                           style="margin-top: -5px;">
+                </div>
+                <div class="col-lg-4">
                     <label class="font-weight-bold col-form-label" for="community">Community</label>
                     <label class="text-danger">*</label>
                     <select class="custom-select  text-size-13px  h-32px" name="community" id="community"
@@ -74,16 +77,18 @@
                         <option>Rupper Mayer</option>
                     </select>
                 </div>
-                <div class="col-lg-4">
-                    <label class="font-weight-bold col-form-label" for="homeland">Homeland</label>
-                    <label class="text-danger">*</label>
-                    <input name="homeland" id="homeland" type="text" class="form-control  text-size-13px "
-                           placeholder="Enter Homeland..."
-                           style="margin-top: -5px;">
-                </div>
             </div>
             <div class="row mt-1">
                 <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="position">Position</label>
+                    <label class="text-danger">*</label>
+                    <select class="custom-select  text-size-13px  h-32px" name="position"
+                            id="position" style="margin-top: -5px;">
+                        <option value="0" disabled selected>--- Position ---</option>
+                        <option>Regency</option>
+                    </select>
+                </div>
                 <div class="col-lg-4">
                     <label class="font-weight-bold col-form-label" for="status">Status</label>
                     <label class="text-danger">*</label>
@@ -92,6 +97,16 @@
                         <option value="0" disabled selected>--- Status ---</option>
                         <option>Active</option>
                     </select>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <label class="font-weight-bold col-form-label" for="homeland">Homeland</label>
+                    <label class="text-danger">*</label>
+                    <input name="homeland" id="homeland" type="text" class="form-control  text-size-13px "
+                           placeholder="Enter Homeland..."
+                           style="margin-top: -5px;">
                 </div>
                 <div class="col-lg-4">
                     <label class="font-weight-bold col-form-label" for="image">Image</label>
