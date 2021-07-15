@@ -4,26 +4,25 @@
 <div class="card shadow mb-4" style="margin-top: -5px;">
     <div class="card-header py-3" style="margin-bottom:-40px">
         <div class="row mb-3">
-            <div class="col-md-2">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
                 <h6 class="m-0 font-weight-bold text-dark">MANAGERS</h6>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-6"></div>
         </div>
         <div class="row mr-1">
-            <div class="col-md-2">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
                 <a class="btn rounded btn-success" style="color: white;font-size:14px;">
                     <i class="fas fa-file-export fa-sm"></i>
                     &nbsp;Export
                 </a>
             </div>
-            <div class="col-md-7"></div>
-            <div class="col-md-2" style="padding-left:85px;">
+            <div class="col-xl-2 offset-xl-7 col-lg-1 offset-lg-8 col-md-2 offset-md-6 col-sm-3 offset-md-5 col-12 mb-1" style="padding-left:85px;">
                 <a class="btn rounded btn-success" style="color: white;font-size:14px;">
                     <i class="fas fa-file-import fa-sm"></i>
                     &nbsp;Import
                 </a>
             </div>
-            <div class="col-md-1">
+            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-12">
                 <a class="btn rounded btn-hover-blue" href="{% url 'pages:add_manager' %}"
                    style="background-color: #056299;color: white;font-size:14px;">
                     <i class="fas fa-plus fa-sm"></i>
@@ -35,13 +34,13 @@
     <div class="card-body">
         <hr style="height:1px;color:lightgray;background-color:lightgray">
         <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                <select class="custom-select" id="choose_filter">
-                    <option value="0" selected>Choose Filter</option>
-                    <option value="1">Position</option>
-                    <option value="2">Homeland</option>
-                </select>
-            </div>
+<!--            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">-->
+<!--                <select class="custom-select" id="choose_filter">-->
+<!--                    <option value="0" selected>Choose Filter</option>-->
+<!--                    <option value="1">Position</option>-->
+<!--                    <option value="2">Homeland</option>-->
+<!--                </select>-->
+<!--            </div>-->
             <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
                 <select class="custom-select filter-manager" id="position_filter">
                     <option value="0">Position</option>
@@ -50,38 +49,36 @@
                     <option value="Doctor">Doctor</option>
                 </select>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                <select class="custom-select filter-manager" id="homeland_filter">
-                    <option value="0">Homeland</option>
-                    <option value="Ho Chi Minh">Ho Chi Minh</option>
-                    <option value="Hai Phong">Hai Phong</option>
-                    <option value="Ninh Binh">Ninh Binh</option>
-                </select>
-            </div>
+<!--            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">-->
+<!--                <select class="custom-select filter-manager" id="homeland_filter">-->
+<!--                    <option value="0">Homeland</option>-->
+<!--                    <option value="Ho Chi Minh">Ho Chi Minh</option>-->
+<!--                    <option value="Hai Phong">Hai Phong</option>-->
+<!--                    <option value="Ninh Binh">Ninh Binh</option>-->
+<!--                </select>-->
+<!--            </div>-->
         </div>
         <hr style="height:1px;color:lightgray;background-color:lightgray">
         <div class="table-responsive" style="margin-top:-8px">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                 <thead>
                 <tr>
-                    <th>Ordinal</th>
+                    <th>No.</th>
                     <th>Fullname</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Position</th>
-                    <th>Homeland</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th>Ordinal</th>
+                    <th>No.</th>
                     <th>Fullname</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Position</th>
-                    <th>Homeland</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -93,7 +90,6 @@
                     <td>0978654123</td>
                     <td>begin@gmail.com</td>
                     <td class="position" data-position="Director">Director</td>
-                    <td class="homeland" data-homeland="Hai Phong">Hai Phong</td>
                     <td>
                         <i class="fas fa-toggle-on fa-lg text-success"></i>
                     </td>
@@ -126,7 +122,6 @@
                     <td>0978654123</td>
                     <td>begin@gmail.com</td>
                     <td class="position" data-position="Manager">Manager</td>
-                    <td class="homeland" data-homeland="Ninh Binh">Ninh Binh</td>
                     <td>
                         <i class="fas fa-toggle-on fa-lg text-success"></i>
                     </td>
@@ -159,7 +154,7 @@
                     <td>0978654123</td>
                     <td>begin@gmail.com</td>
                     <td class="position" data-position="Doctor">Doctor</td>
-                    <td class="homeland" data-homeland="Ho Chi Minh">Ho Chi Minh</td>
+<!--                    <td class="homeland" data-homeland="Ho Chi Minh">Ho Chi Minh</td>-->
                     <td>
                         <i class="fas fa-toggle-on fa-lg text-success"></i>
                     </td>

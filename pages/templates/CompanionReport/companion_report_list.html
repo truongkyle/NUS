@@ -4,26 +4,26 @@
 <div class="card shadow mb-4" style="margin-top: -5px;">
     <div class="card-header py-3" style="margin-bottom:-40px">
         <div class="row mb-3">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                 <h6 class="m-0 font-weight-bold text-dark">COMPANION REPORTS</h6>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6"></div>
         </div>
         <div class="row mr-1">
-            <div class="col-md-2">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
                 <a class="btn rounded btn-success" style="color: white;font-size:14px;">
                     <i class="fas fa-file-export fa-sm"></i>
                     &nbsp;Export
                 </a>
             </div>
-            <div class="col-md-7"></div>
-            <div class="col-md-2" style="padding-left:85px;">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-3 col-5"></div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-3" style="padding-left:85px;">
                 <a class="btn rounded btn-success" style="color: white;font-size:14px;">
                     <i class="fas fa-file-import fa-sm"></i>
                     &nbsp;Import
                 </a>
             </div>
-            <div class="col-md-1">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3 col-2">
                 <a class="btn rounded btn-hover-blue" href="{% url 'pages:add_companion_report' %}"
                    style="background-color: #056299;color: white;font-size:14px;">
                     <i class="fas fa-plus fa-sm"></i>
@@ -35,7 +35,7 @@
     <div class="card-body">
         <hr style="height:1px;color:lightgray;background-color:lightgray">
         <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4">
                 <select class="custom-select filter-report" id="companion_filter">
                     <option value="0">Companion</option>
                     <option value="Nguyen Van An">Nguyen Van An</option>
@@ -43,16 +43,16 @@
                     <option value="Ho Khanh Dien">Ho Khanh Dien</option>
                 </select>
             </div>
-            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 mt-2">
+            <div class="col-xl-1 col-lg-1 col-md-3 col-sm-3 col-3 mt-2">
                 <span class="font-weight-bold">From</span>
             </div>
-            <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4">
+            <div class="col-xl-3 col-lg-2 col-md-5 col-sm-5 col-5">
                 <input type="date" class="custom-select filter-report" id="filter_date_from" />
             </div>
-            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 mt-2">
+            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-2 mt-2">
                 <span class="font-weight-bold">To</span>
             </div>
-            <div class="col-xl-3 col-lg-2 col-md-4 col-sm-4">
+            <div class="col-xl-3 col-lg-2 col-md-5 col-sm-5 col-5">
                 <input type="date" class="custom-select filter-report" id="filter_date_to" />
             </div>
         </div>
@@ -61,7 +61,7 @@
             <table class="table table-bordered table-report" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th>Ordinal</th>
+                    <th>No.</th>
                     <th>Companion</th>
                     <th>Candidate</th>
                     <th>Date</th>
@@ -70,7 +70,7 @@
                 </thead>
                 <tfoot>
                 <tr>
-                    <th>Ordinal</th>
+                    <th>No.</th>
                     <th>Companion</th>
                     <th>Candidate</th>
                     <th>Date</th>
