@@ -11,14 +11,14 @@
         </div>
         <div class="row mr-1">
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                <a class="btn rounded btn-success" data-toggle="modal" data-target="#exportCompanionReportModal" style="color: white;font-size:14px;">
                     <i class="fas fa-file-export fa-sm"></i>
                     &nbsp;Export
                 </a>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-3 col-5"></div>
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-3" style="padding-left:85px;">
-                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                <a class="btn rounded btn-success" data-toggle="modal" data-target="#importCompanionReportModal" style="color: white;font-size:14px;">
                     <i class="fas fa-file-import fa-sm"></i>
                     &nbsp;Import
                 </a>
@@ -47,13 +47,13 @@
                 <span class="font-weight-bold">From</span>
             </div>
             <div class="col-xl-3 col-lg-2 col-md-5 col-sm-5 col-5">
-                <input type="date" class="custom-select filter-report" id="filter_date_from" />
+                <input type="date" class="custom-select filter-report" id="filter_date_from"/>
             </div>
             <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-2 mt-2">
                 <span class="font-weight-bold">To</span>
             </div>
             <div class="col-xl-3 col-lg-2 col-md-5 col-sm-5 col-5">
-                <input type="date" class="custom-select filter-report" id="filter_date_to" />
+                <input type="date" class="custom-select filter-report" id="filter_date_to"/>
             </div>
         </div>
         <hr style="height:1px;color:lightgray;background-color:lightgray">
@@ -271,6 +271,102 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="exportCompanionReportModal" class="modal modal-edu-general default-popup-SuccessModal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Export Companion Report List</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size: large;">Would you like to export companion report list?</span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success rounded text-white">
+                        Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="importCompanionReportModal" class="modal modal-edu-general default-popup-SuccessModal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Import Companion Report List</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <span class="font-weight-bold" style="font-size: large;">Would you like to import this companion report list?</span>
+                    </div>
+                    <div>
+                        <div class="table-responsive" style="margin-top:-8px">
+                            <table class="table table-bordered table-report" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Companion</th>
+                                    <th>Candidate</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Companion</th>
+                                    <th>Candidate</th>
+                                    <th>Date</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td class="companion" data-companion="Nguyen Van An">Nguyen Van An</td>
+                                    <td>Nguyen Van Tin</td>
+                                    <td>2021-06-23</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td class="companion" data-companion="Nguyen Van An">Nguyen Van An</td>
+                                    <td>Nguyen Van Tin Hoa</td>
+                                    <td>2021-07-13</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td class="companion" data-companion="Ho Khanh Dien">Ho Khanh Dien</td>
+                                    <td>Nguyen Van Tinh</td>
+                                    <td>2021-05-12</td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td class="companion" data-companion="Le Trong Tan">Le Trong Tan</td>
+                                    <td>Nguyen Van Tin</td>
+                                    <td>2021-05-01</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success rounded text-white">
+                        Import
+                    </button>
                 </div>
             </div>
         </div>

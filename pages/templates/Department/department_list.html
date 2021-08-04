@@ -11,14 +11,16 @@
         </div>
         <div class="row mr-1">
             <div class="col-md-2">
-                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                <a class="btn rounded btn-success" data-toggle="modal" data-target="#exportDepartmentModal"
+                   style="color: white;font-size:14px;">
                     <i class="fas fa-file-export fa-sm"></i>
                     &nbsp;Export
                 </a>
             </div>
             <div class="col-md-7"></div>
             <div class="col-md-2" style="padding-left:85px;">
-                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                <a class="btn rounded btn-success" data-toggle="modal" data-target="#importDepartmentModal"
+                   style="color: white;font-size:14px;">
                     <i class="fas fa-file-import fa-sm"></i>
                     &nbsp;Import
                 </a>
@@ -38,7 +40,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th>Ordinal</th>
+                    <th>No.</th>
                     <th>Department</th>
                     <th>Position</th>
                     <th>Action</th>
@@ -46,7 +48,7 @@
                 </thead>
                 <tfoot>
                 <tr>
-                    <th>Ordinal</th>
+                    <th>No.</th>
                     <th>Department</th>
                     <th>Position</th>
                     <th>Action</th>
@@ -96,6 +98,81 @@
                     </button>
                     <button class="btn rounded text-white btn-hover-blue" style="background-color: #056299;">
                         Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="exportDepartmentModal" class="modal modal-edu-general default-popup-SuccessModal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Export Department List</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size: large;">Would you like to export department list?</span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success rounded text-white">
+                        Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="importDepartmentModal" class="modal modal-edu-general default-popup-SuccessModal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Import Department List</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <span class="font-weight-bold" style="font-size: large;">Would you like to import this department list?</span>
+                    </div>
+                    <div>
+                        <div class="table-responsive" style="margin-top:-8px">
+                            <table class="table table-bordered" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Department</th>
+                                    <th>Position</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Department</th>
+                                    <th>Position</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Education</td>
+                                    <td>Leader</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success rounded text-white">
+                        Import
                     </button>
                 </div>
             </div>

@@ -11,14 +11,14 @@
         </div>
         <div class="row mr-1">
             <div class="col-md-2">
-                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                <a class="btn rounded btn-success" data-toggle="modal" data-target="#exportCommunityModal" style="color: white;font-size:14px;">
                     <i class="fas fa-file-export fa-sm"></i>
                     &nbsp;Export
                 </a>
             </div>
             <div class="col-md-7"></div>
             <div class="col-md-2" style="padding-left:85px;">
-                <a class="btn rounded btn-success" style="color: white;font-size:14px;">
+                <a class="btn rounded btn-success" data-toggle="modal" data-target="#importCommunityModal" style="color: white;font-size:14px;">
                     <i class="fas fa-file-import fa-sm"></i>
                     &nbsp;Import
                 </a>
@@ -38,7 +38,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th scope="col">Ordinal</th>
+                    <th scope="col">No.</th>
                     <th scope="col">Community Name</th>
                     <th scope="col">Patron</th>
                     <th scope="col">Address</th>
@@ -48,7 +48,7 @@
                 </thead>
                 <tfoot>
                 <tr>
-                    <th scope="col">Ordinal</th>
+                    <th scope="col">No.</th>
                     <th scope="col">Community Name</th>
                     <th scope="col">Patron</th>
                     <th scope="col">Address</th>
@@ -58,31 +58,31 @@
                 </tfoot>
                 <tbody>
                 {% for each_community in community_list %}
-                    <tr>
-                        <th class="align-middle" scope="row">{{forloop.counter}}</th>
-                        <td>{{each_community.community.communityName}}</td>
-                        <td>{{each_community.community.patron.day}} / {{each_community.community.patron.month}}</td>
-                        <td>{{each_community.community.address}}</td>
-                        <td>{{each_community.amout_candidate}}</td>
-                        <td>
-                            <div class="row" style="margin-left:-13px;">
-                                <div class="col-lg-4">
-                                    <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
-                                            style="margin-left: -14px;">
-                                        <i class="fas fa-edit fa-md ml--2px"></i>
-                                    </button>
-                                </div>
-                                <div class="col-lg-4">
-                                    <button data-toggle="modal" data-target="#deleteCandidateModal"
-                                            class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
-                                        <i class="far fa-trash-alt fa-md ml--1px"></i>
-                                    </button>
-                                </div>
+                <tr>
+                    <th class="align-middle" scope="row">{{forloop.counter}}</th>
+                    <td>{{each_community.community.communityName}}</td>
+                    <td>{{each_community.community.patron.day}} / {{each_community.community.patron.month}}</td>
+                    <td>{{each_community.community.address}}</td>
+                    <td>{{each_community.amout_candidate}}</td>
+                    <td>
+                        <div class="row" style="margin-left:-13px;">
+                            <div class="col-lg-4">
+                                <button class="btn btn-warning btn-sm h-28px w-28px rounded" type="submit"
+                                        style="margin-left: -14px;">
+                                    <i class="fas fa-edit fa-md ml--2px"></i>
+                                </button>
                             </div>
-                        </td>
-                    </tr>
+                            <div class="col-lg-4">
+                                <button data-toggle="modal" data-target="#deleteCandidateModal"
+                                        class="btn btn-danger btn-sm h-28px w-28px rounded" style="margin-left: -28px;">
+                                    <i class="far fa-trash-alt fa-md ml--1px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
                 {% endfor %}
-               
+
                 </tbody>
             </table>
         </div>
@@ -105,6 +105,92 @@
                     </button>
                     <button class="btn rounded text-white btn-hover-blue" style="background-color: #056299;">
                         Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="exportCommunityModal" class="modal modal-edu-general default-popup-SuccessModal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Export Community List</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size: large;">Would you like to export community list?</span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success rounded text-white">
+                        Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="importCommunityModal" class="modal modal-edu-general default-popup-SuccessModal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="">
+                <div class="modal-header header-color-modal bg-color-1">
+                    <h4 class="modal-title" style="margin-left: -30px;">Import Community List</h4>
+                    <div class="modal-close-area modal-close-df" style="padding-left: -200px;padding-bottom:-200px;">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <span class="font-weight-bold" style="font-size: large;">Would you like to import this community list?</span>
+                    </div>
+                    <div>
+                        <div class="table-responsive" style="margin-top:-8px">
+                            <table class="table table-bordered" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Community Name</th>
+                                    <th scope="col">Patron</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Community Name</th>
+                                    <th scope="col">Patron</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                {% for each_community in community_list %}
+                                <tr>
+                                    <th class="align-middle" scope="row">{{forloop.counter}}</th>
+                                    <td>{{each_community.community.communityName}}</td>
+                                    <td>{{each_community.community.patron.day}} /
+                                        {{each_community.community.patron.month}}
+                                    </td>
+                                    <td>{{each_community.community.address}}</td>
+                                    <td>{{each_community.amout_candidate}}</td>
+                                </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger rounded" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success rounded text-white">
+                        Import
                     </button>
                 </div>
             </div>
